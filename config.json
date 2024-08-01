@@ -1,0 +1,12 @@
+{
+    "inputVideo": "testVideoRaw.mp4",
+    "inputImageDir": "input_images",
+    "outputDir": "outputs",
+    "scaleFactor": 1.8,
+    "overlayOpacity": 0.2,
+    "overlayPosition": {
+      "x": "(W-w)/2",
+      "y": "(H-h)/2"
+    }
+  }
+  

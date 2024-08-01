@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 const ffmpegPath = require('ffmpeg-static');
+const { SendMessageToDiscord } = require('./hook/discord');
 
 // Set the ffmpeg binary path
 ffmpeg.setFfmpegPath(ffmpegPath);
@@ -80,4 +81,6 @@ fs.readdir(inputImageDir, (err, files) => {
   });
 });
 
-console.log('Processing complete. All videos will be saved in the output directory.');
+console.log('Processing complete. All videos will be saved in the outputs directory.');
+
+SendMessageToDiscord("Processing complete. All videos will be saved in the output directory.")

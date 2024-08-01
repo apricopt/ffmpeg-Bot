@@ -1,2 +1,6 @@
 node_modules
 .env
+ouputs/*
+input_Images/*
+*.mp4
+*.mov

@@ -38,8 +38,7 @@ const processFile = (file, callback) => {
   console.log(`Starting processing for ${file}...`);
   
   ffmpeg(inputVideo)
-    .input(inputImage)
-    .complexFilter([
+    .input(inputImage).complexFilter([
       {
         filter: 'scale',
         options: `iw*${scaleFactor}:ih*${scaleFactor}`,
@@ -67,8 +66,7 @@ const processFile = (file, callback) => {
         inputs: ['0:v', 'ovr'],
         outputs: 'final'
       }
-    ])
-    .outputOptions(['-map', '[final]'])
+    ]).outputOptions(['-map', '[final]']).outputOptions(['-map 0:a'])
     .output(outputVideo)
     .on('end', () => {
       console.log(`Processed ${file} and saved to ${outputVideo}`);
